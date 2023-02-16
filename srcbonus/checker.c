@@ -6,13 +6,13 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:48:26 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 16:40:44 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	check_sort_stacks(stack *a, stack *b)
+void	check_sort_t_stacks(t_stack *a, t_stack *b)
 {
 	if (b->size)
 	{
@@ -25,7 +25,7 @@ void	check_sort_stacks(stack *a, stack *b)
 		ft_printf("KO\n");
 }
 
-void	invalid_output(stack *a, stack *b, char *str)
+void	invalid_output(t_stack *a, t_stack *b, char *str)
 {
 	free (a->list);
 	free (b->list);
@@ -34,7 +34,7 @@ void	invalid_output(stack *a, stack *b, char *str)
 	exit (0);
 }
 
-void	contruct_stack(stack *a, stack *b, char *str)
+void	contruct_t_stack(t_stack *a, t_stack *b, char *str)
 {
 	if (!ft_strcmp(str, "sa\n"))
 		ft_sx(a);
@@ -56,7 +56,7 @@ void	contruct_stack(stack *a, stack *b, char *str)
 		invalid_output(a, b, str);
 }
 
-void	get_output(stack *a, stack *b, int fd)
+void	get_output(t_stack *a, t_stack *b, int fd)
 {
 	char	*output;
 
@@ -65,7 +65,7 @@ void	get_output(stack *a, stack *b, int fd)
 		output = get_next_line(fd);
 		if (!output)
 			break ;
-		contruct_stack (a, b, output);
+		contruct_t_stack (a, b, output);
 		free (output);
 	}
 	free (output);
@@ -73,8 +73,8 @@ void	get_output(stack *a, stack *b, int fd)
 
 int	main(int argc, char **argv)
 {
-	stack	a;
-	stack	b;
+	t_stack	a;
+	t_stack	b;
 
 	if (argc >= 2)
 	{
@@ -92,7 +92,7 @@ int	main(int argc, char **argv)
 		check_int_limits(&a);
 		check_reps(&a);
 		get_output(&a, &b, STDIN_FILENO);
-		check_sort_stacks(&a, &b);
+		check_sort_t_stacks(&a, &b);
 		free (a.list);
 		free (b.list);
 	}

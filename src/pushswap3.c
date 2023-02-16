@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfaustin <kfaustin@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 23:01:36 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/15 21:30:54 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	pushswap_3(stack *s)
+void	pushswap_3(t_stack *s)
 {
 	long	imax;
 	long	imin;

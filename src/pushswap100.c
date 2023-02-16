@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap100.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfaustin <kfaustin@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 23:33:12 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/15 22:22:08 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:54:01 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	pushswap_100(stack *a, stack *b, int part)
+void	pushswap_100(t_stack *a, t_stack *b, int part)
 {
 	pushswap_100logic(a, b, part);
 	ft_finish(b, a);
 }
 
-void	pushswap_100logic(stack *a, stack *b, int part)
+void	pushswap_100logic(t_stack *a, t_stack *b, int part)
 {
-	func_var	var;
+	t_func_var	var;
 
 	var.ntil = 1;
 	var.lst.list = ascending_list(a->list, a->size);
@@ -45,14 +45,14 @@ void	pushswap_100logic(stack *a, stack *b, int part)
 	free (var.lst.list);
 }
 
-/* void	pushswap_100(stack *a, stack *b, int part)
+/* void	pushswap_100(t_stack *a, t_stack *b, int part)
 {
 	int	sent;
 	int	total;
 	int	val;
 	int	ntil;
 	int	step;
-	stack lst;
+	t_stack lst;
 
 	ntil = 1;
 	lst.list_num = ascending_list(a->list_num, a->size);

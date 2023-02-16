@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfaustin <kfaustin@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 23:22:28 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/15 22:00:41 by kfaustin         ###   ########.fr       */
+/*   Created: 2023/02/16 16:58:19 by kfaustin          #+#    #+#             */
+/*   Updated: 2023/02/16 16:58:22 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	betterb(stack *s, long val, int step)
+void	betterb(t_stack *s, long val, int step)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ void	betterb(stack *s, long val, int step)
 		ft_shiftup(s);
 }
 
-void	bettera(stack *s, long val, int step)
+void	bettera(t_stack *s, long val, int step)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ void	bettera(stack *s, long val, int step)
 		ft_shiftup(s);
 }
 
-void	ft_finish(stack *from, stack *to)
+void	ft_finish(t_stack *from, t_stack *to)
 {
 	while (from->size > 0)
 	{
@@ -43,7 +43,7 @@ void	ft_finish(stack *from, stack *to)
 	}
 }
 
-int	is_sorted(stack *s)
+int	is_sorted(t_stack *s)
 {
 	int	i;
 	int	num;

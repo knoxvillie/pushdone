@@ -6,13 +6,13 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 22:55:36 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 10:31:33 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_remove_first_elem(stack *s)
+void	ft_remove_first_elem(t_stack *s)
 {
 	long	*list;
 	int		i;
@@ -28,7 +28,7 @@ void	ft_remove_first_elem(stack *s)
 	s->list = list;
 }
 
-void	ft_swap(stack *s)
+void	ft_swap(t_stack *s)
 {
 	long	swap;
 
@@ -40,7 +40,7 @@ void	ft_swap(stack *s)
 	s->list[1] = swap;
 }
 
-void	ft_shiftup(stack *s)
+void	ft_shiftup(t_stack *s)
 {
 	long	*list;
 	int		i;
@@ -60,7 +60,7 @@ void	ft_shiftup(stack *s)
 	s->list = list;
 }
 
-void	ft_shiftdown(stack *s)
+void	ft_shiftdown(t_stack *s)
 {
 	long	*list;
 	int		i;
@@ -80,7 +80,7 @@ void	ft_shiftdown(stack *s)
 	s->list = list;
 }
 
-void	ft_push(stack *from, stack *to)
+void	ft_push(t_stack *from, t_stack *to)
 {
 	long	*list;
 	int		i;

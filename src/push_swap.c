@@ -6,13 +6,13 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:03:04 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 11:20:34 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/* void	coisas(stack *a, stack *b, int argc, char **argv)
+/* void	coisas(t_stack *a, t_stack *b, int argc, char **argv)
 {
 	char **s;
 
@@ -25,8 +25,8 @@
 
 int	main(int argc, char **argv)
 {
-	stack	a;
-	stack	b;
+	t_stack	a;
+	t_stack	b;
 
 	if (argc < 2)
 	{

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfaustin <kfaustin@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 23:17:07 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/15 21:57:07 by kfaustin         ###   ########.fr       */
+/*   Created: 2023/02/16 16:58:41 by kfaustin          #+#    #+#             */
+/*   Updated: 2023/02/16 16:58:43 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	minontop(stack *s)
+void	minontop(t_stack *s)
 {
 	int	imin;
 
@@ -29,7 +29,7 @@ void	minontop(stack *s)
 	}
 }
 
-void	maxontop(stack *s)
+void	maxontop(t_stack *s)
 {
 	int	imax;
 
@@ -46,7 +46,7 @@ void	maxontop(stack *s)
 	}
 }
 
-void	index_in_chunk(stack *s, int val)
+void	index_in_chunk(t_stack *s, int val)
 {
 	int	i;
 	int	j;
@@ -68,7 +68,7 @@ void	index_in_chunk(stack *s, int val)
 	best_rotate(s, i, j);
 }
 
-void	do_best_rotate(stack *s, int posi, int posj, int center)
+void	do_best_rotate(t_stack *s, int posi, int posj, int center)
 {
 	if (ft_abs(posi, center) >= ft_abs(posj, center))
 	{
@@ -90,7 +90,7 @@ void	do_best_rotate(stack *s, int posi, int posj, int center)
 	}
 }
 
-void	best_rotate(stack *s, int i, int j)
+void	best_rotate(t_stack *s, int i, int j)
 {
 	int	center;
 
@@ -105,7 +105,7 @@ void	best_rotate(stack *s, int i, int j)
 	do_best_rotate (s, i, j, center);
 }
 
-/* void	bestrotate(stack *s, int i, int j)
+/* void	bestrotate(t_stack *s, int i, int j)
 {
 	int	center;
 

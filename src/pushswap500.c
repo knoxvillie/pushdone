@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap500.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfaustin <kfaustin@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 23:38:31 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/15 21:55:25 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:54:01 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	pushswap_500(stack *a, stack *b, int part)
+void	pushswap_500(t_stack *a, t_stack *b, int part)
 {
 	pushswap_100logic(a, b, part);
 	pushswap_500logic(b, a, (5 * part));
@@ -20,7 +20,7 @@ void	pushswap_500(stack *a, stack *b, int part)
 	ft_finish(b, a);
 }
 
-void	index_in_chunk2(stack *s, long val)
+void	index_in_chunk2(t_stack *s, long val)
 {
 	int	i;
 	int	j;
@@ -42,9 +42,9 @@ void	index_in_chunk2(stack *s, long val)
 	best_rotate(s, i, j);
 }
 
-void	pushswap_500logic(stack *b, stack *a, int part)
+void	pushswap_500logic(t_stack *b, t_stack *a, int part)
 {
-	func_var	var;
+	t_func_var	var;
 
 	var.ntil = part - 1;
 	var.lst.list = ascending_list(b->list, b->size);
@@ -69,14 +69,14 @@ void	pushswap_500logic(stack *b, stack *a, int part)
 	free (var.lst.list);
 }
 
-/* void	pushswap_500(stack *b, stack *a, int part)
+/* void	pushswap_500(t_stack *b, t_stack *a, int part)
 {
 	int	sent;
 	int	total;
 	int	val;
 	int	ntil;
 	int	step;
-	stack lst;
+	t_stack lst;
 
 	ntil = part - 1;
 	lst.list_num = ascending_list(b->list_num, b->size);

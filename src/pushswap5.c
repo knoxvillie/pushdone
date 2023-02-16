@@ -6,13 +6,13 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 23:03:44 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 10:24:36 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:02:42 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push5_utils(stack *a, stack *b)
+void	push5_utils(t_stack *a, t_stack *b)
 {
 	pushswap_3(a);
 	ft_push(b, a);
@@ -29,7 +29,7 @@ void	push5_utils(stack *a, stack *b)
 	}
 }
 
-void	pushswap_5(stack *a, stack *b)
+void	pushswap_5(t_stack *a, t_stack *b)
 {
 	long	imin;
 	long	imax;
@@ -40,7 +40,6 @@ void	pushswap_5(stack *a, stack *b)
 		return ;
 	while (a->size > 3)
 	{
-		ft_printf("imin %d, imax %d\n", imin, imax);
 		if (imin == 0 || imax == 0)
 			ft_push(a, b);
 		else
@@ -51,7 +50,7 @@ void	pushswap_5(stack *a, stack *b)
 	push5_utils (a, b);
 }
 
-/* void	pushswap_5(stack *a, stack *b)
+/* void	pushswap_5(t_stack *a, t_stack *b)
 {
 	int	imin;
 	int	imax;

@@ -6,13 +6,13 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:58:29 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 14:42:12 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	check_int_limits(stack *a)
+void	check_int_limits(t_stack *a)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ void	check_int_limits(stack *a)
 	}
 }
 
-void	check_reps(stack *a)
+void	check_reps(t_stack *a)
 {
 	long	*list;
 	int		i;
@@ -102,7 +102,7 @@ void	check_invalid_mult_argv(int argc, char **argv)
 	}
 }
 
-void	checkarguments(stack *a, stack *b, char **argv, int argc)
+void	checkarguments(t_stack *a, t_stack *b, char **argv, int argc)
 {
 	if (argc == 2)
 	{

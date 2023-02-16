@@ -6,7 +6,7 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 23:34:07 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 13:12:25 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_avarege(int *list, int size)
 	return (sum / size);
 }
 
-void	print_stacks(stack a, stack b)
+void	print_t_stacks(t_stack a, t_stack b)
 {
 	int	i;
 	int	size;
@@ -56,7 +56,7 @@ void	print_stacks(stack a, stack b)
 			ft_printf("   %d	x   \n", b.list[i]);
 		i++;
 	}
-	ft_printf("StackA	StackB\n\n");
+	ft_printf("t_stackA	t_stackB\n\n");
 }
 
 int	ft_strcmp(char *s1, char *s2)
