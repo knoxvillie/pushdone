@@ -6,7 +6,7 @@
 #    By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/11 00:04:31 by kfaustin          #+#    #+#              #
-#    Updated: 2023/02/20 10:51:33 by kfaustin         ###   ########.fr        #
+#    Updated: 2023/02/20 15:24:51 by kfaustin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,6 @@ clean:
 
 fclean: clean
 		make -C $(PDIR) fclean
-		$(RM) $(BINARY)
+		$(RM) $(BINARY) $(CHECKER)
 
 re: fclean all
