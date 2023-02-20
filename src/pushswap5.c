@@ -6,7 +6,7 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 23:03:44 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 17:02:42 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:01:52 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 void	push5_utils(t_stack *a, t_stack *b)
 {
 	pushswap_3(a);
-	ft_push(b, a);
-	if (is_sorted(a))
+	if (is_sorted(b))
 	{
+		ft_shiftup(b);
 		ft_push(b, a);
-		if (a->size > 4)
-			ft_shiftup(a);
+		ft_shiftup(a);
+		ft_push(b, a);
 	}
 	else
 	{
+		ft_push(b, a);
 		ft_shiftup(a);
 		ft_push(b, a);
 	}
@@ -31,53 +32,54 @@ void	push5_utils(t_stack *a, t_stack *b)
 
 void	pushswap_5(t_stack *a, t_stack *b)
 {
-	long	imin;
-	long	imax;
+	long	vmin;
+	long	vmax;
+	long	*l;
 
-	imin = min_index(a->list, a->size);
-	imax = max_index(a->list, a->size);
 	if (is_sorted(a))
 		return ;
+	l = a->list;
+	vmin = l[min_index(a->list, a->size)];
+	vmax = l[max_index(a->list, a->size)];
 	while (a->size > 3)
 	{
-		if (imin == 0 || imax == 0)
+		if (l[0] == vmin || l[0] == vmax)
 			ft_push(a, b);
 		else
-			ft_shiftup(a);
-		imin = min_index(a->list, a->size);
-		imax = max_index(a->list, a->size);
+		{
+			if ((l[1] == vmin || l[1] == vmax)
+				|| (l[2] == vmin || l[2] == vmax))
+				ft_shiftup(a);
+			else
+				ft_shiftdown(a);
+			l = a->list;
+		}
 	}
 	push5_utils (a, b);
 }
 
-/* void	pushswap_5(t_stack *a, t_stack *b)
+void	pushswap_4(t_stack *a, t_stack *b)
 {
-	int	imin;
-	int	imax;
+	long	vmin;
+	long	*l;
 
-	imin = min_index(a->list_num, a->size);
-	imax = max_index(a->list_num, a->size);
+	if (is_sorted(a))
+		return ;
+	l = a->list;
+	vmin = l[min_index(a->list, a->size)];
 	while (a->size > 3)
 	{
-		if (imin == 0 || imax == 0)
+		l = a->list;
+		if (l[0] == vmin)
 			ft_push(a, b);
 		else
-			ft_shiftup(a);
-		imin = min_index(a->list_num, a->size);
-		imax = max_index(a->list_num, a->size);
+		{
+			if (l[1] == vmin)
+				ft_shiftup(a);
+			else
+				ft_shiftdown(a);
+		}
 	}
 	pushswap_3(a);
 	ft_push(b, a);
-	if (is_sorted(a))
-	{
-		ft_push(b, a);
-		if (a->size > 4)
-			ft_shiftup(a);
-	}
-	else
-	{
-		ft_shiftup(a);
-		ft_push(b, a);
-	}
 }
- */

@@ -6,7 +6,7 @@
 #    By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/11 00:04:31 by kfaustin          #+#    #+#              #
-#    Updated: 2023/02/16 17:01:28 by kfaustin         ###   ########.fr        #
+#    Updated: 2023/02/20 10:51:33 by kfaustin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,9 @@ SRC_G	= get_next_line.c get_next_line_utils.c
 OBJ_G	= $(addprefix $(GDIR), $(SRC_G:.c=.o))
 
 # Checker path
-SRC_B	= ./srcbonus/checker.c
-SRC_M	= ./srcbonus/check_moves.c
+SRC_BONUS		= check_moves.c checker.c
+SRC_BONUS_PATH	= ./srcbonus/
+SRC_COMP		= $(addprefix $(SRC_BONUS_PATH), $(SRC_BONUS))
 
 # Target and rules
 all: $(PSLIB) $(PLIB)
@@ -72,7 +73,7 @@ $(GLIB): all $(OBJ_G)
 #		$(CC) $(CFLAGS) -c -o $@ $^
 
 bonus: $(GLIB)
-		$(CC) $(CFLAGS) -g $(SRC_B) $(SRC_M) $(GLIB) $(PLIB) $(PSLIB) -o $(CHECKER)
+		$(CC) $(CFLAGS) -g $(SRC_COMP) $(GLIB) $(PLIB) $(PSLIB) -o $(CHECKER)
 
 clean:
 #		make -C $(PDIR) clean

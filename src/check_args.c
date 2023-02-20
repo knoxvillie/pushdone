@@ -6,7 +6,7 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:58:29 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:07:06 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@ void	checkarguments(t_stack *a, t_stack *b, char **argv, int argc)
 {
 	if (argc == 2)
 	{
+		str_null(argv[1]);
+		check_is_space(argv[1]);
 		check_invalid_single_argv(argv[1]);
 		single_argv(a, b, argv[1]);
 	}

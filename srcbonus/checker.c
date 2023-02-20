@@ -6,7 +6,7 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:48:26 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/20 10:41:06 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	main(int argc, char **argv)
 		if (argc == 2)
 		{
 			str_null(argv[1]);
+			check_is_space(argv[1]);
 			check_invalid_single_argv(argv[1]);
 			single_argv(&a, &b, argv[1]);
 		}

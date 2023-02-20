@@ -6,7 +6,7 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 23:34:07 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:21:26 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,18 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	}
 	return (s1[i] - s2[i]);
+}
+
+void	check_is_space(char *str)
+{
+	if (str[0] == ' ' && str[1] == '\0')
+	{
+		write (2, "Error\n", 6);
+		exit (0);
+	}
+	if ((str[0] == '+' || str[0] == '-') && str[1] == '\0')
+	{
+		write (2, "Error\n", 6);
+		exit (0);
+	}
 }

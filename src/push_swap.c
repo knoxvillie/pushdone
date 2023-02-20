@@ -6,22 +6,11 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:03:04 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 16:53:13 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:35:53 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-/* void	coisas(t_stack *a, t_stack *b, int argc, char **argv)
-{
-	char **s;
-
-	if (argc == 2)
-	{
-		s = ft_split(argv[1]);
-		while ()
-	}
-} */
 
 int	main(int argc, char **argv)
 {
@@ -35,7 +24,9 @@ int	main(int argc, char **argv)
 	checkarguments(&a, &b, argv, argc);
 	if (a.size <= 3)
 		pushswap_3(&a);
-	else if (a.size <= 5)
+	else if (a.size == 4)
+		pushswap_4(&a, &b);
+	else if (a.size == 5)
 		pushswap_5(&a, &b);
 	else if (a.size <= 100)
 		pushswap_100(&a, &b, 5);

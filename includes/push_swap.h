@@ -6,7 +6,7 @@
 /*   By: kfaustin <kfaustin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:39:37 by kfaustin          #+#    #+#             */
-/*   Updated: 2023/02/16 16:54:51 by kfaustin         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:35:35 by kfaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	pushswap_3(t_stack *s);
 // pushswap5.c
 void	pushswap_5(t_stack *a, t_stack *b);
 void	push5_utils(t_stack *a, t_stack *b);
+void	pushswap_4(t_stack *a, t_stack *b);
 // pushswap100.c
 void	pushswap_100(t_stack *a, t_stack *b, int part);
 void	pushswap_100logic(t_stack *a, t_stack *b, int part);
@@ -100,5 +101,6 @@ int		ft_abs(int x, int y);
 int		ft_avarege(int *list, int size);
 void	print_t_stacks(t_stack a, t_stack b);
 int		ft_strcmp(char *s1, char *s2);
+void	check_is_space(char *str);
 
 #endif
